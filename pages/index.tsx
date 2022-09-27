@@ -4,7 +4,8 @@ import styles from '../styles/Home.module.css'
 import { Container } from 'react-bootstrap'
 
 import Header from '../components/Header'
-import Card from '../components/TeamMemberCard'
+import TeamMembers from '../components/TeamMembers'
+import DropDown from '../components/TeamDropDown'
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +16,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header selectedTeam="A" teamMemberCount={1} />
-      <Card image='/male_profile.png' fullName='Bob Jones' designation='Javascript Developer' />
+      <DropDown />
+      <TeamMembers />
     </Container>
   )
 }

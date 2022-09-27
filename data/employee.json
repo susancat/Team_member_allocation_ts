@@ -1,0 +1,74 @@
+[
+    {
+        "fullname": "Bob Jones",
+        "designation": "JavaScript Developer",
+        "gender": "male",
+        "team":"A"
+    },
+    {
+        "fullname": "Jill Bailey",
+        "designation": "Node Developer",
+        "gender": "female",
+        "team":"A"
+    },
+    {
+        "fullname": "Gail Shepherd",
+        "designation": "Java Developer",
+        "gender": "female",
+        "team":"A"
+    },
+    {
+        "fullname": "Sam Reynolds",
+        "designation": "React Developer",
+        "gender": "male",
+        "team":"B"
+    },
+    {
+        "fullname": "David Henry",
+        "designation": "DotNet Developer",
+        "gender": "male",
+        "team":"B"
+    },
+    {
+        "fullname": "Sarah Blake",
+        "designation": "SQL Server DBA",
+        "gender": "female",
+        "team":"B"
+    },
+    {
+        "fullname": "James Bennet",
+        "designation": "Angular Developer",
+        "gender": "male",
+        "team":"C"
+    },
+    {
+        "fullname": "Jessica Faye",
+        "designation": "API Developer",
+        "gender": "female",
+        "team":"C"
+    },
+    {
+        "fullname": "Lita Stone",
+        "designation": "C++ Developer",
+        "gender": "female",
+        "team":"C"
+    },
+    {
+        "fullname": "Danial Young",
+        "designation": "Python Developer",
+        "gender": "male",
+        "team":"D"
+    },
+    {
+        "fullname": "Adrian Jacobs",
+        "designation": "Vue Developer",
+        "gender": "male",
+        "team":"D"
+    },
+    {
+        "fullname": "Devin Monroe",
+        "designation": "Graphic Developer",
+        "gender": "male",
+        "team":"D"
+    }
+]

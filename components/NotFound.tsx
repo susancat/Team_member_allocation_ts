@@ -2,7 +2,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 interface NotFoundProps{}
 const NotFound = (props: NotFoundProps) => {
-
     return (
       <Container>
         <Row className="justify-content-center mt-3 mb-4">

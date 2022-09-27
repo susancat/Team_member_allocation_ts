@@ -1,0 +1,10 @@
+.cardUnselected {
+    width: 18rem;
+    margin-bottom: 0.5rem;
+}
+
+.cardSelected {
+    width: 18rem;
+    border: 5px solid grey;
+    margin-bottom: 0.5rem;
+}

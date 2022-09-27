@@ -8,8 +8,8 @@ const Footer = (props: FooterProps) => {
   
     return (
       <Container>
-        <Row className="row justify-content-center mt-3 mb-4">
-          <Col className="xs-8">
+        <Row className="justify-content-center mt-3 mb-4">
+          <Col>
             <h5>Team Member Allocation App - {today.getFullYear()}</h5>
           </Col>
         </Row>

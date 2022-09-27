@@ -1,16 +1,18 @@
-import { Nav } from 'react-bootstrap'
+import { Container, Nav } from 'react-bootstrap'
 
 interface NavbarProps {}
 const Navbar = (props: NavbarProps) => {
     return(
-        <Nav variant="pills" defaultActiveKey="/">
-      <Nav.Item>
-        <Nav.Link href="/">Home</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="team">Team</Nav.Link>
-      </Nav.Item>
-    </Nav>
+      <Container>
+        <Nav defaultActiveKey="/">
+          <Nav.Item>
+            <Nav.Link href="/">Home</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/team">Team</Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Container>
     )
 }
 
