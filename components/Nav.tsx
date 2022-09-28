@@ -4,12 +4,12 @@ interface NavbarProps {}
 const Navbar = (props: NavbarProps) => {
     return(
       <Container>
-        <Nav defaultActiveKey="/">
+        <Nav>
           <Nav.Item>
             <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/team">Team</Nav.Link>
+            <Nav.Link href="/teams">Teams</Nav.Link>
           </Nav.Item>
         </Nav>
       </Container>

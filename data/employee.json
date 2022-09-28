@@ -3,72 +3,84 @@
         "fullname": "Bob Jones",
         "designation": "JavaScript Developer",
         "gender": "male",
-        "team":"A"
+        "team":"A",
+        "updatedTeam": ""
     },
     {
         "fullname": "Jill Bailey",
         "designation": "Node Developer",
         "gender": "female",
-        "team":"A"
+        "team":"A",
+        "updatedTeam": ""
     },
     {
         "fullname": "Gail Shepherd",
         "designation": "Java Developer",
         "gender": "female",
-        "team":"A"
+        "team":"A",
+        "updatedTeam": ""
     },
     {
         "fullname": "Sam Reynolds",
         "designation": "React Developer",
         "gender": "male",
-        "team":"B"
+        "team":"B",
+        "updatedTeam": ""
     },
     {
         "fullname": "David Henry",
         "designation": "DotNet Developer",
         "gender": "male",
-        "team":"B"
+        "team":"B",
+        "updatedTeam": ""
     },
     {
         "fullname": "Sarah Blake",
         "designation": "SQL Server DBA",
         "gender": "female",
-        "team":"B"
+        "team":"B",
+        "updatedTeam": ""
     },
     {
         "fullname": "James Bennet",
         "designation": "Angular Developer",
         "gender": "male",
-        "team":"C"
+        "team":"C",
+        "updatedTeam": ""
     },
     {
         "fullname": "Jessica Faye",
         "designation": "API Developer",
         "gender": "female",
-        "team":"C"
+        "team":"C",
+        "updatedTeam": ""
     },
     {
         "fullname": "Lita Stone",
         "designation": "C++ Developer",
         "gender": "female",
-        "team":"C"
+        "team":"C",
+        "updatedTeam": ""
     },
     {
         "fullname": "Danial Young",
         "designation": "Python Developer",
         "gender": "male",
-        "team":"D"
+        "team":"D",
+        "updatedTeam": ""
     },
     {
         "fullname": "Adrian Jacobs",
         "designation": "Vue Developer",
         "gender": "male",
-        "team":"D"
+        "team":"D",
+        "updatedTeam": ""
     },
     {
         "fullname": "Devin Monroe",
         "designation": "Graphic Developer",
         "gender": "male",
-        "team":"D"
+        "team":"D",
+        "updatedTeam": ""
     }
 ]

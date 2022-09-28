@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button, Card } from 'react-bootstrap'
 
 import style from '../styles/Home.module.css'
@@ -7,16 +7,44 @@ interface TeamMemberCardProps{
     gender: string;
     fullName: string;
     designation: string;
+    team: string;
+    updatedTeam: string
 }
-const TeamMemberCard = (props: TeamMemberCardProps) => {
-  const [memberSelected, setMemberSelected] = useState('')
+const TeamMemberCard = (props: TeamMemberCardProps, selectedTeam: string) => {
   const [cardSelected, setCardSelected] = useState(false)
-  const handleSelect = (member: string) => {
-    setMemberSelected(member)
+  useEffect(() => {
+    tranverseTeam()
+  }, [selectedTeam])
+  useEffect(() => {
+    teamUpdate()
+ }, [cardSelected])
+
+ const tranverseTeam = () => {
+
+ }
+  const handleSelect = () => {
     setCardSelected(!cardSelected)
   }
+
+  const teamUpdate = () => {
+    switch (selectedTeam) {
+      case'A':
+
+    }
+    // localStorage.setItem('selectedEmployee', JSON.stringify({
+    //   gender: props.gender,
+    //   fullName: props.fullName,
+    //   designation: props.designation,
+    //   originalTeam: props.originalTeam,
+    //   cardSelected,
+    //   selectedTeam: localStorage.getItem('selectedTeam')
+    // }))
+  }
+
   return (
-    <Card className={cardSelected === false? style.cardUnselected : style.cardSelected}>
+    <Card 
+      className={cardSelected === false? style.cardUnselected : style.cardSelected}
+    >
       {
         props.gender === "male"?
         <Card.Img className="m-auto" variant="top" src='/male_profile.png' style={{width: '15rem', height: '15rem'}} /> :
@@ -24,11 +52,16 @@ const TeamMemberCard = (props: TeamMemberCardProps) => {
       }
      
       <Card.Body>
-        <Card.Title>Full Name: {props.fullName}</Card.Title>
-        <Card.Text>
+        <Card.Title className='text-center'>Full Name: {props.fullName}</Card.Title>
+        <Card.Text className='text-center'>
             Designation: {props.designation}
         </Card.Text>
-        <Button variant="white" className='stretched-link' onClick={() => handleSelect(props.fullName)}></Button>
+        <Button 
+          variant="white" 
+          className='stretched-link' 
+          onClick={() => handleSelect()}
+          style={{zIndex:'-1'}}
+        ></Button>
       </Card.Body>
     </Card>
   )
