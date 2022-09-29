@@ -8,7 +8,6 @@ interface TeamMemberCardProps{
     fullName: string;
     designation: string;
     team: string;
-    updatedTeam: string
 }
 const TeamMemberCard = (props: TeamMemberCardProps, selectedTeam: string) => {
   const [cardSelected, setCardSelected] = useState(false)
