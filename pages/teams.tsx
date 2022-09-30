@@ -1,14 +1,13 @@
-import type { NextPage } from 'next'
 import Header from '../components/Header'
-import employeeList from '../data/employee.json'
-import { useState, useEffect } from 'react'
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap'
 
-const Teams: NextPage = () => {
-    const [employees, setEmployees] = useState( employeeList || localStorage.getItem('employeeList'))
-    useEffect(() => {
-        localStorage.setItem('employeeList', JSON.stringify(employeeList))
-      },[employees])
+interface TeamsProps{
+    employees: any;
+    setTeam: any;
+    selectedTeam: string
+}
+const Teams = (props: TeamsProps) => {
+    const {employees, selectedTeam, setTeam } = props
   return (
     <Container className='mt-5 mb-3'>
         <Header selectedTeam="A" teamMemberCount={3} />
@@ -34,7 +33,7 @@ const Teams: NextPage = () => {
                 <Tab.Content>
                     <Tab.Pane eventKey="A">
                     {
-                        employees.filter(employee => employee.team === "A").map((e: any, i: any) => (
+                        employees.filter((employee: any) => employee.team === "A").map((e: any, i: any) => (
                             <Col xs={6} md={4} key={i}>
                                 <h3>{e.fullname}</h3>
                             </Col>
@@ -43,7 +42,7 @@ const Teams: NextPage = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="B">
                     {
-                        employees.filter(employee => employee.team === "B").map((e: any, i: any) => (
+                        employees.filter((employee: any) => employee.team === "B").map((e: any, i: any) => (
                             <Col xs={6} md={4} key={i}>
                                 <h3>{e.fullname}</h3>
                             </Col>
@@ -52,7 +51,7 @@ const Teams: NextPage = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="C">
                     {
-                        employees.filter(employee => employee.team === "C").map((e: any, i: any) => (
+                        employees.filter((employee: any) => employee.team === "C").map((e: any, i: any) => (
                             <Col xs={6} md={4} key={i}>
                                 <h3>{e.fullname}</h3>
                             </Col>
@@ -61,7 +60,7 @@ const Teams: NextPage = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="D">
                     {
-                        employees.filter(employee => employee.team === "D").map((e: any, i: any) => (
+                        employees.filter((employee: any) => employee.team === "D").map((e: any, i: any) => (
                             <Col xs={6} md={4} key={i}>
                                 <h3>{e.fullname}</h3>
                             </Col>

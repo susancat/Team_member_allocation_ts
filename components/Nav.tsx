@@ -9,7 +9,7 @@ const Navbar = (props: NavbarProps) => {
             <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href='/teams'>Teams</Nav.Link>
+            <Nav.Link href="/teams">Teams</Nav.Link>
           </Nav.Item>
         </Nav>
       </Container>
