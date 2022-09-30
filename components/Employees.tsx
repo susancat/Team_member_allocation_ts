@@ -1,5 +1,5 @@
-import TeamMembers from '../components/TeamMembers'
-import TeamSelect from '../components/TeamSelect'
+import TeamMembers from './TeamMembers'
+import TeamSelect from './TeamSelect'
 
 interface EmployeesProps {
     employees: any;
@@ -8,13 +8,18 @@ interface EmployeesProps {
     handleTeamSelectionChange: any
 }
 const Employees = (props: EmployeesProps) => {
+    const { employees, selectedTeam, handleEmployeeCardClick, handleTeamSelectionChange } = props
     return(
         <>
             <TeamSelect 
-                selectedTeam={props.selectedTeam} 
-                handleTeamSelectionChange={props.handleTeamSelectionChange}
+                selectedTeam={selectedTeam} 
+                handleTeamSelectionChange={handleTeamSelectionChange}
             />
-            <TeamMembers employees={props.employees}/>
+            <TeamMembers 
+                employees={employees}
+                selectedTeam={selectedTeam} 
+                handleEmployeeCardClick={handleEmployeeCardClick}
+            />
         </>
     )
 }
