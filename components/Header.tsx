@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap'
 
 interface HeaderProps{
-    selectedTeam: string;
+    selectedTeam: string | null;
     teamMemberCount: number
 }
 const Header = (props: HeaderProps) => {

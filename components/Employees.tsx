@@ -1,14 +1,18 @@
 import TeamMembers from './TeamMembers'
 import TeamSelect from './TeamSelect'
-
+import { useState, useEffect } from 'react'
 interface EmployeesProps {
     employees: any;
-    selectedTeam: string;
+    selectedTeam: string | null;
     handleEmployeeCardClick: any;
     handleTeamSelectionChange: any
 }
 const Employees = (props: EmployeesProps) => {
-    const { employees, selectedTeam, handleEmployeeCardClick, handleTeamSelectionChange } = props
+    const { selectedTeam, handleEmployeeCardClick, handleTeamSelectionChange } = props
+    const [employees, setEmployees] = useState(props.employees)
+    useEffect(() => {
+        setEmployees(props.employees)
+    },[props])
     return(
         <>
             <TeamSelect 

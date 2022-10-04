@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import TeamMemberCard from './TeamMemberCard'
@@ -6,7 +5,7 @@ import TeamMemberCard from './TeamMemberCard'
 
 interface TeamMembersProps{
     employees: any;
-    selectedTeam: string;
+    selectedTeam: string | null;
     handleEmployeeCardClick: any 
 }
 

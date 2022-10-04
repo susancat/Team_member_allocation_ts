@@ -1,18 +1,65 @@
+import { useState, useEffect } from 'react'
+
 import Header from '../components/Header'
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap'
 
-interface TeamsProps{
+interface TeamProps {
     employees: any;
-    setTeam: any;
-    selectedTeam: string
+    selectedTeam: string | null;
+    setTeam: any
 }
-const Teams = (props: TeamsProps) => {
-    const {employees, selectedTeam, setTeam } = props
+const Teams = (props: TeamProps) => {
+    const { employees, selectedTeam, setTeam } = props
+    const [groupedEmployees, setEmployeeGroups] = useState(groupTeamMembers())
+
+    function groupTeamMembers() {//must be function rather than const
+        let teams: Array<any> = []
+        let teamAMembers = employees.filter((employee: any) => employee.team === 'A')
+        let teamA = {
+            team: 'A',
+            members: teamAMembers,
+            active: selectedTeam === 'A'? true : false,
+        }
+        teams.push(teamA)
+
+        let teamBMembers = employees.filter((employee: any) => employee.team === "B")
+        let teamB = {
+            team: 'B',
+            members: teamBMembers,
+            active: selectedTeam === 'B'? true : false,
+        }
+        teams.push(teamB)
+
+        let teamCMembers = employees.filter((employee: any) => employee.team === 'C')
+        let teamC = {
+            team: 'C',
+            members: teamCMembers,
+            active: selectedTeam === 'C'? true : false,
+        }
+        teams.push(teamC)
+
+        let teamDMembers = employees.filter((employee: any) => employee.team === 'D')
+        let teamD = {
+            team: 'D',
+            members: teamDMembers,
+            active: selectedTeam === 'D'? true : false,
+        }
+        teams.push(teamD)
+        return teams
+    }
+
+    const handleTeamClick = (event: any) => {
+        let transformedGroupData: any = groupedEmployees.map((groupedData: any) => groupedData.team === event.currentTarget.id ? 
+            { ...groupedData, active: !groupedData.active } :
+            groupedData
+        ) 
+        setEmployeeGroups(transformedGroupData)
+        setTeam(event.currentTarget.id)
+    }
   return (
     <Container className='mt-5 mb-3'>
-        <Header selectedTeam="A" teamMemberCount={3} />
         <Tab.Container id="teamMembers" defaultActiveKey="A">
-            <Row className='m-auto mt-5'>
+            <Row className='ms-5 mt-5'>
                 <Col sm={3}>
                 <Nav variant="pills" className="flex-column">
                     <Nav.Item>
@@ -33,7 +80,7 @@ const Teams = (props: TeamsProps) => {
                 <Tab.Content>
                     <Tab.Pane eventKey="A">
                     {
-                        employees.filter((employee: any) => employee.team === "A").map((e: any, i: any) => (
+                        Object.values(groupedEmployees[0].members).map((e: any, i: any) => (
                             <Col xs={6} md={4} key={i}>
                                 <h3>{e.fullname}</h3>
                             </Col>
@@ -42,7 +89,7 @@ const Teams = (props: TeamsProps) => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="B">
                     {
-                        employees.filter((employee: any) => employee.team === "B").map((e: any, i: any) => (
+                        Object.values(groupedEmployees[1].members).map((e: any, i: any) => (
                             <Col xs={6} md={4} key={i}>
                                 <h3>{e.fullname}</h3>
                             </Col>
@@ -51,7 +98,7 @@ const Teams = (props: TeamsProps) => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="C">
                     {
-                        employees.filter((employee: any) => employee.team === "C").map((e: any, i: any) => (
+                        Object.values(groupedEmployees[2].members).map((e: any, i: any) => (
                             <Col xs={6} md={4} key={i}>
                                 <h3>{e.fullname}</h3>
                             </Col>
@@ -60,7 +107,7 @@ const Teams = (props: TeamsProps) => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="D">
                     {
-                        employees.filter((employee: any) => employee.team === "D").map((e: any, i: any) => (
+                        Object.values(groupedEmployees[3].members).map((e: any, i: any) => (
                             <Col xs={6} md={4} key={i}>
                                 <h3>{e.fullname}</h3>
                             </Col>

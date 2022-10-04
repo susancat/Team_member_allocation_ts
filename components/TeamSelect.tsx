@@ -1,7 +1,7 @@
 import { Form } from 'react-bootstrap'
 
 interface TeamSelectProps{
-  selectedTeam: string;
+  selectedTeam: string | null;
   handleTeamSelectionChange: any
 }
 const TeamSelect = (props: TeamSelectProps) => {
@@ -10,7 +10,7 @@ const TeamSelect = (props: TeamSelectProps) => {
       <Form.Select 
         size="lg" 
         aria-label="select a team" 
-        value={selectedTeam}
+        value={`${selectedTeam} | null`}
         onChange={handleTeamSelectionChange} 
         style={{width:'80%'}} 
         className='m-auto mb-3'

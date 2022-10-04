@@ -14,4 +14,4 @@ yarn dev
 
 - frontend: Next.js/Bootstrap 5/TypeScript
 - storage: localStorage
-- this is a practice for TypeScript with simple storage by localStorage and no data management tool like Redux used.
+- this is a practice for TypeScript with simple storage by localStorage, no data management tool like Redux and no database are used.
