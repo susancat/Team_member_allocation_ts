@@ -7,7 +7,7 @@ import Employees from '../components/Employees'
 import Teams from './teams'
 const Home = () => {
   const [selectedTeam, setTeam] = useState('B' || localStorage.getItem('selectedTeam'))
-  const [employees, setEmployees] = useState(typeof window !== 'undefined'? JSON.parse(localStorage.getItem('employeeList')) : employeeList)
+  const [employees, setEmployees] = useState(employeeList || localStorage.getItem('employeeList'))
 //must give it a default value, otherwise when localStorage is not ready yet, the SSR will conflict with CSR
 useEffect(() => {
   localStorage.setItem('employeeList', JSON.stringify(employees))
