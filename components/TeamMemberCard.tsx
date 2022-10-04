@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 interface TeamMemberCardProps{
   employee: any;
   handleEmployeeCardClick: any;
-  selectedTeam: string;
+  selectedTeam: string | null;
 }
 const TeamMemberCard = (props: TeamMemberCardProps) => {
   const { id, gender, fullname, designation, team } = props.employee
